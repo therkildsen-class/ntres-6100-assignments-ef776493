@@ -201,7 +201,7 @@ was produced from US economic time series data available from
 unemployed persons (`unemploy`), among other variables, in the US from
 1967 to 2015.
 
-    head(economics) %>% kable()
+    economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
 
 | date       |   pce |    pop | psavert | uempmed | unemploy |
 |:-----------|------:|-------:|--------:|--------:|---------:|
