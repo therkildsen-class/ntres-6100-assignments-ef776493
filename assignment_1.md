@@ -1,5 +1,4 @@
 # Assignment 1
-Emily Fratz
 
 # Assignment 1: Quarto template
 
