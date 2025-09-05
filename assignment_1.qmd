@@ -26,7 +26,7 @@ editor: visual
 
 To start, load all the required packages with the following code. Install them if they are not installed yet.
 
-```{r}
+```{r, eval=FALSE}
 library(tidyverse)
 library(knitr)
 ```
@@ -176,16 +176,6 @@ This excercise uses the dataset `economics` from the ggplot2 package. It was pro
 head(economics) %>% kable()
 ```
 
-| date       |   pce |    pop | psavert | uempmed | unemploy |
-|:-----------|------:|-------:|--------:|--------:|---------:|
-| 1967-07-01 | 506.7 | 198712 |    12.6 |     4.5 |     2944 |
-| 1967-08-01 | 509.8 | 198911 |    12.6 |     4.7 |     2945 |
-| 1967-09-01 | 515.6 | 199113 |    11.9 |     4.6 |     2958 |
-| 1967-10-01 | 512.2 | 199311 |    12.9 |     4.9 |     3143 |
-| 1967-11-01 | 517.4 | 199498 |    12.8 |     4.7 |     3066 |
-| 1967-12-01 | 525.1 | 199657 |    11.8 |     4.8 |     3018 |
-
-<br>
 
 #### 3.1 Plot the trend in number of unemployed persons (`unemploy`) though time using the economics dataset shown above. And for this question only, **hide your code and only show the plot**.
 
