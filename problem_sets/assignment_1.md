@@ -55,7 +55,7 @@ corrupted the country is perceived to be.)
 
 First, we load the data using the following code.
 
-    head(economics) %>% kable()
+    economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
 
 #### 1.1 Show the first few rows of `economist_data`.
 
@@ -201,7 +201,7 @@ was produced from US economic time series data available from
 unemployed persons (`unemploy`), among other variables, in the US from
 1967 to 2015.
 
-    economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
+    head(economics) %>% kable()
 
 | date       |   pce |    pop | psavert | uempmed | unemploy |
 |:-----------|------:|-------:|--------:|--------:|---------:|

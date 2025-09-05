@@ -38,7 +38,7 @@ This exercise explores a dataset containing the human development index (`HDI`) 
 First, we load the data using the following code.
 
 ```
-head(economics) %>% kable()
+economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
 ```
 
 
@@ -173,7 +173,7 @@ Show data for the 6 subjects with the smallest sum of `Dose` as below. **Do not 
 This excercise uses the dataset `economics` from the ggplot2 package. It was produced from US economic time series data available from <http://research.stlouisfed.org/fred2>. It descibes the number of unemployed persons (`unemploy`), among other variables, in the US from 1967 to 2015.
 
 ```
-economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
+head(economics) %>% kable()
 ```
 
 | date       |   pce |    pop | psavert | uempmed | unemploy |
