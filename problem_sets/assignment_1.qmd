@@ -26,7 +26,7 @@ editor: visual
 
 To start, load all the required packages with the following code. Install them if they are not installed yet.
 
-```{r,eval=FALSE}
+```
 library(tidyverse)
 library(knitr)
 ```
@@ -37,9 +37,10 @@ This exercise explores a dataset containing the human development index (`HDI`) 
 
 First, we load the data using the following code.
 
-```{r, eval=FALSE}
-economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
+```{r}
+head(economics) %>% kable()
 ```
+
 
 #### 1.1 Show the first few rows of `economist_data`.
 
