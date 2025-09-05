@@ -1,5 +1,6 @@
 # Assignment 1
 
+
 # Assignment 1: Quarto template
 
 ## Instructions: Please read through this before you begin
@@ -39,24 +40,8 @@
 To start, load all the required packages with the following code.
 Install them if they are not installed yet.
 
-``` r
-library(tidyverse)
-```
-
-    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ✔ dplyr     1.1.4     ✔ readr     2.1.5
-    ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-    ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-    ✔ purrr     1.1.0     
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
-library(knitr)
-```
+    library(tidyverse)
+    library(knitr)
 
 ## Exercise 1. Corruption and human development
 
@@ -70,18 +55,7 @@ corrupted the country is perceived to be.)
 
 First, we load the data using the following code.
 
-``` r
-economist_data <- read_csv("https://raw.githubusercontent.com/nt246/NTRES-6100-data-science/master/datasets/EconomistData.csv")
-```
-
-    New names:
-    Rows: 173 Columns: 6
-    ── Column specification
-    ──────────────────────────────────────────────────────── Delimiter: "," chr
-    (2): Country, Region dbl (4): ...1, HDI.Rank, HDI, CPI
-    ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-    Specify the column types or set `show_col_types = FALSE` to quiet this message.
-    • `` -> `...1`
+    head(economics) %>% kable()
 
 #### 1.1 Show the first few rows of `economist_data`.
 
@@ -227,9 +201,7 @@ was produced from US economic time series data available from
 unemployed persons (`unemploy`), among other variables, in the US from
 1967 to 2015.
 
-``` r
-head(economics) %>% kable()
-```
+    head(economics) %>% kable()
 
 | date       |   pce |    pop | psavert | uempmed | unemploy |
 |:-----------|------:|-------:|--------:|--------:|---------:|
@@ -239,17 +211,6 @@ head(economics) %>% kable()
 | 1967-10-01 | 512.2 | 199311 |    12.9 |     4.9 |     3143 |
 | 1967-11-01 | 517.4 | 199498 |    12.8 |     4.7 |     3066 |
 | 1967-12-01 | 525.1 | 199657 |    11.8 |     4.8 |     3018 |
-
-| date       |   pce |    pop | psavert | uempmed | unemploy |
-|:-----------|------:|-------:|--------:|--------:|---------:|
-| 1967-07-01 | 506.7 | 198712 |    12.6 |     4.5 |     2944 |
-| 1967-08-01 | 509.8 | 198911 |    12.6 |     4.7 |     2945 |
-| 1967-09-01 | 515.6 | 199113 |    11.9 |     4.6 |     2958 |
-| 1967-10-01 | 512.2 | 199311 |    12.9 |     4.9 |     3143 |
-| 1967-11-01 | 517.4 | 199498 |    12.8 |     4.7 |     3066 |
-| 1967-12-01 | 525.1 | 199657 |    11.8 |     4.8 |     3018 |
-
-<br>
 
 #### 3.1 Plot the trend in number of unemployed persons (`unemploy`) though time using the economics dataset shown above. And for this question only, **hide your code and only show the plot**.
 
