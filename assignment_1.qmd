@@ -1,6 +1,5 @@
 ---
 title: "Assignment 1"
-author: "Emily Fratz"
 format: gfm
 editor: visual
 ---
