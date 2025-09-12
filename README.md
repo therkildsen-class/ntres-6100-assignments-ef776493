@@ -21,3 +21,5 @@ Please use the following table to grade the student's assignment:
 |      7      |                 |                     |               |
 |      8      |                 |                     |               |
 |      9      |                 |                     |               |
+
+Assignment 2: https://github.com/ef776493/25DB-F2.git
