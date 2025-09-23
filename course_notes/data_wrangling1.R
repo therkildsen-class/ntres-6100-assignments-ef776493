@@ -152,8 +152,124 @@ vacc |>
 
 
 
-# Summarize --------------------------------------------------------------
+
+# Summarize function ------------------------------------------------------
+
+ #summarize is also a dplyr function, uses same syntax
+#pipe shortcut: command/shift/m
+#can also do "mean" or something else on the righthand side of the equals sign. On the lefthand size, can call it whatever we want
+
+coronavirus |> 
+  filter(type == "confirmed") |> 
+  summarize(total = sum(cases)) 
+
+coronavirus |> 
+  filter(type == "confirmed") |> 
+  group_by(country) |> 
+  summarize(total = sum(cases)) |> 
+  arrange(-total) #sort from high to low
 
 
-  
+coronavirus |> 
+  filter(type == "confirmed") |> 
+  group_by(country) |> 
+  summarize(total = sum(cases),
+            n = n()) |> #use n to get higher number of obsesrvations 
+  arrange(-total) 
+
+
+coronavirus |> 
+  group_by(date, type) |>  #can do multiple groupings (hierarchical)
+  summarize(total = sum(cases))
+
+
+coronavirus |> 
+  group_by(date, type) |>  
+  summarize(total = sum(cases)) |> 
+  filter(date == "2023-01-01") #total case counts for a particular date
+
+
+coronavirus |> 
+  filter(type == "death") |> 
+  group_by(date) |> 
+  summarize(total = sum(cases)) |> 
+  arrange(-total) |> 
+  ggplot() +
+  geom_point(mapping = aes(x = "date", y="total"))
+
+gg_base <- coronavirus |> 
+  filter(type =="confirmed") |> 
+  group_by(date) |> 
+  summarize(cases = sum(cases)) |> 
+  arrange(-cases) |> 
+  ggplot(mapping = aes(x = date, y= cases)) 
+
+gg_base + 
+  geom_line()
+
+gg_base +
+  geom_point
+
+gg_base +
+  geom_col(color = "red")
+
+
+gg_base +
+  geom_area(color = "red", fill = "red")
+
+gg_base + 
+  geom_line(
+  color = "purple", 
+  linetype = "dashed")
+
+gg_base + 
+  geom_point(
+    color = "purple", 
+    shape = 17, 
+    size = 4, 
+    alpha = .5) #dictates transparency 
+
+gg_base + 
+  geom_point(mapping = aes(size = cases, color = cases), #this is pretty messy / redundant, no new variables
+    alpha = .5)
+
+gg_base + 
+  geom_point(mapping = aes(size = cases, color = cases), #this is pretty messy / redundant, no new variables
+             alpha = .4) +
+  theme_minimal() + 
+  theme(legend.background = element_rect(fill = "lemonchiffon", color = "grey80", linewidth = 1)) #look up themes, endless customization
+
+
+
+gg_base + 
+  geom_point(mapping = aes(size = cases, color = cases), 
+             alpha = .4) +
+  theme_minimal() + 
+  labs(
+    x = "Date", y = "Total Confirmed Cases", 
+    title = str_c("Daily Counts of New Coronavirus Cases", max(coronavirus$date), sep=" "), #use str to get most up to date info on dataset, not hardcde
+    subtitle = "Global Sums")
+
+
+#Exercise: daily reports of new confirmed cases by each country 
+
+coronavirus |> 
+  filter(type =="confirmed") |> 
+  group_by(country, date) |> 
+  summarize(total = sum(cases)) |> 
+  ggplot() + 
+  geom_line(mapping = aes(x= date, y=total, color = country)) #not helpful plot, too many countries
+
+
+top5 <- coronavirus |> 
+  filter(type =="confirmed") |> 
+  group_by(country) |> 
+  summarize(total = sum(cases)) |> 
+  arrange(-total) |> 
+  head(5) |> 
+  pull(country) #pull out vector of top 5 country names
+
+
+
+
 
