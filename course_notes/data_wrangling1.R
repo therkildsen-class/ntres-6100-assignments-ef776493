@@ -270,6 +270,12 @@ top5 <- coronavirus |>
   pull(country) #pull out vector of top 5 country names
 
 
-
+coronavirus |> 
+  filter(type =="confirmed", country %in% top5, cases >= 0) |> 
+  group_by(country, date) |> 
+  summarize(total = sum(cases)) |> 
+  ggplot() + 
+  geom_line(mapping = aes(x= date, y=total, color = country)) +
+  facet_wrap(~ country, ncol = 1)
 
 
