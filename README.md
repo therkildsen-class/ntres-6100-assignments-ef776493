@@ -12,9 +12,9 @@ Please use the following table to grade the student's assignment:
 
 | Assignment# | Fully completed | Partially completed | Not completed |
 |:-----------:|:---------------:|:-------------------:|:-------------:|
-|      1      |                 |                     |               |
-|      2      |                 |                     |               |
-|      3      |                 |                     |               |
+|      1      |        X         |                     |               |
+|      2      |         X        |                     |               |
+|      3      |         X        |                     |               |
 |      4      |                 |                     |               |
 |      5      |                 |                     |               |
 |      6      |                 |                     |               |
@@ -22,6 +22,7 @@ Please use the following table to grade the student's assignment:
 |      8      |                 |                     |               |
 |      9      |                 |                     |               |
 
+<<<<<<< HEAD
 
 
 Assignment 2:
@@ -29,3 +30,10 @@ Assignment 2:
 Assignment 3: 
 - Website
 - Repo
+=======
+Assignment 2: https://github.com/ef776493/25DB-F2.git
+
+
+Assignment 3: Website URL:  https://ef776493.github.io/assignment-3-ef389/
+              Repo URL:     https://github.com/ef776493/assignment-3-ef389.git
+>>>>>>> edcb5948da152a05d521d6db74bd0c29aa3df07a
