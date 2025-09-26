@@ -75,7 +75,6 @@ ggplot(mapping = aes(x = CPI, y = HDI, color = Region)) +
  
 ```
 
-
 #### 1.7 Fit a separate **straight line** for **each region** instead, and turn off the confidence interval.
 
 ```{r}
@@ -131,7 +130,7 @@ ggplot(mapping = aes(x = Region)) + geom_bar()
 
 #### 1.13 You have now created a variety of different plots of the same dataset. Which of your plots do you think are the most informative? Describe briefly the major trends that you see in the data.
 
-Answer: I think the most informative plots are the ones using facet_wrap, where the variables are visually broken out. The density plot also provides a really nice visual. There is certainly variability in the data, and I'd expect there to be some statistically significant differences. 
+Answer: I think the most informative plots are the ones using facet_wrap, where the variables are visually broken out. The density plot also provides a really nice visual. There is certainly variability in the data, and I'd expect there to be some statistically significant differences.
 
 ## Exercise 2. Theophylline experiment
 
