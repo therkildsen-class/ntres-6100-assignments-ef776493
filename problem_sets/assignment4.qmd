@@ -1,7 +1,7 @@
 ---
 title: "Assignment 4"
 format: gfm
-editor: visual
+editor: visual 
 ---
 
 # Assignment 4: Data transformation and visualization
