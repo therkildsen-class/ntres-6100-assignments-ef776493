@@ -68,4 +68,51 @@ table5 |>
 
 head(coronavirus)
 
-         
+
+
+# Notes: Tidy Data cont. 9/30/25 ------------------------------------------
+
+
+#Tidy data set rules 
+#1 each variable forms a column
+#2 each observation forms a row
+#3 each cell is a single measurement
+
+#pivot wider to spread to new variables
+#pivot longer to pull data into consolidated columns
+
+
+coronavirus <- read_csv('https://raw.githubusercontent.com/RamiKrispin/coronavirus/master/csv/coronavirus.csv')
+library(tidyverse)   
+head(coronavirus)
+
+
+coronavirus |> 
+  filter(country == "US", cases >= 0) |> 
+  ggplot() +
+  geom_line(aes(x = date, y=cases, color = type))
+
+
+#separate out confirmed-death-recovered
+coronawide <- coronavirus |> 
+  pivot_wider(names_from = type, values_from = cases)
+
+#very hard to plot in wide format! would have to overlay 3 layers
+coronawide |> 
+  filter(country == "US", confirmed >= 0, death >= 0, recovery >= 0) |> 
+  ggplot() +
+  geom_line(aes(x = date, color ))
+
+
+#plot death count vs confirmed cases by country 
+coronavirus_ttd <- coronavirus |> 
+  group_by(country, type) |>
+  summarize(total_cases = sum(cases)) |>
+  pivot_wider(names_from = type, values_from = total_cases)
+
+# Now we can plot this easily
+ggplot(coronavirus_ttd) +
+  geom_label(mapping = aes(x = confirmed, y = death, label = country))
+
+
+
